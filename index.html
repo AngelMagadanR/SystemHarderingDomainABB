@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABB System Hardening — Documentación Técnica | CYATAM</title>
+  <meta name="description" content="Documentación técnica completa del Kit ABB System Hardening para Active Directory en entornos de control industrial." />
+  <link rel="icon" href="../assets/icon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Highlight.js para syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+<div id="app">
+
+  <!-- ══════════════ HEADER ══════════════ -->
+  <header class="header">
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <div class="header-left">
+      <img src="../assets/logo-cyatam.png" alt="CYATAM" class="logo-cyatam" />
+      <div class="header-divider"></div>
+      <div class="header-title-block">
+        <span class="header-title">ABB System Hardening</span>
+        <span class="header-subtitle">Documentación Técnica — Active Directory</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <span class="badge-version">v1.2</span>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- ══════════════ SIDEBAR ══════════════ -->
+    <aside class="sidebar">
+      <div class="sidebar-search">
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" id="searchInput" placeholder="Buscar sección… (Ctrl+K)" />
+        </div>
+      </div>
+
+      <div class="sidebar-section"><span class="sidebar-section-label">Introducción</span></div>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a class="nav-link active" data-page="page-overview">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-text">Vista General</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-page="page-descripcion">
+            <span class="nav-icon">📋</span>
+            <span class="nav-text">Descripción General</span>
+            <span class="nav-num">01</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-page="page-estructura">
+            <span class="nav-icon">📁</span>
+            <span class="nav-text">Estructura de Directorios</span>
+            <span class="nav-num">02</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-section"><span class="sidebar-section-label">Ejecución</span></div>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a class="nav-link" data-page="page-flujo">
+            <span class="nav-icon">⚙️</span>
+            <span class="nav-text">Flujo de Ejecución</span>
+            <span class="nav-num">03</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-page="page-scripts">
+            <span class="nav-icon">💻</span>
+            <span class="nav-text">Scripts PowerShell</span>
+            <span class="nav-num">04</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-section"><span class="sidebar-section-label">Active Directory</span></div>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a class="nav-link" data-page="page-ad">
+            <span class="nav-icon">🏢</span>
+            <span class="nav-text">Estructura AD</span>
+            <span class="nav-num">05</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-page="page-gpos">
+            <span class="nav-icon">🛡️</span>
+            <span class="nav-text">Catálogo de GPOs</span>
+            <span class="nav-num">06</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-section"><span class="sidebar-section-label">Operación</span></div>
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a class="nav-link" data-page="page-seguridad">
+            <span class="nav-icon">🔐</span>
+            <span class="nav-text">Análisis de Seguridad</span>
+            <span class="nav-num">07</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-page="page-guia">
+            <span class="nav-icon">✅</span>
+            <span class="nav-text">Guía de Ejecución</span>
+            <span class="nav-num">08</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-page="page-personalizacion">
+            <span class="nav-icon">✏️</span>
+            <span class="nav-text">Personalización</span>
+            <span class="nav-num">09</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-page="page-troubleshooting">
+            <span class="nav-icon">🐛</span>
+            <span class="nav-text">Troubleshooting</span>
+            <span class="nav-num">10</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-footer-logo">
+          <img src="../assets/icon.png" alt="CYATAM" class="icon-sm" />
+          <div class="sidebar-footer-text">
+            <strong>CYATAM</strong><br />
+            Documentación Técnica ABB<br />
+            <span id="__footer_sig__">© 2026 — Hecho por Angel Magadan</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ══════════════ MAIN CONTENT ══════════════ -->
+    <main class="main-content">
+
+      <!-- PAGE: OVERVIEW -->
+      <section class="page active" id="page-overview"></section>
+
+      <!-- PAGE: DESCRIPCION -->
+      <section class="page" id="page-descripcion"></section>
+
+      <!-- PAGE: ESTRUCTURA DIRECTORIOS -->
+      <section class="page" id="page-estructura"></section>
+
+      <!-- PAGE: FLUJO EJECUCION -->
+      <section class="page" id="page-flujo"></section>
+
+      <!-- PAGE: SCRIPTS POWERSHELL -->
+      <section class="page" id="page-scripts"></section>
+
+      <!-- PAGE: ESTRUCTURA AD -->
+      <section class="page" id="page-ad"></section>
+
+      <!-- PAGE: GPOs -->
+      <section class="page" id="page-gpos"></section>
+
+      <!-- PAGE: SEGURIDAD -->
+      <section class="page" id="page-seguridad"></section>
+
+      <!-- PAGE: GUIA EJECUCION -->
+      <section class="page" id="page-guia"></section>
+
+      <!-- PAGE: PERSONALIZACION -->
+      <section class="page" id="page-personalizacion"></section>
+
+      <!-- PAGE: TROUBLESHOOTING -->
+      <section class="page" id="page-troubleshooting"></section>
+
+    </main>
+  </div>
+</div>
+
+<!-- Mobile overlay -->
+<div class="overlay" id="overlay"></div>
+
+<script src="js/guard.js"></script>
+<script src="js/data.js"></script>
+<script src="js/render.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
