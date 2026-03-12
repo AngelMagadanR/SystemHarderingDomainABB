@@ -573,6 +573,7 @@ li strong { color: var(--text-primary); }
   border-radius: var(--radius-md);
   padding: 20px 24px;
   overflow-x: auto;
+  white-space: pre;
 }
 .tree .folder { color: var(--cyatam-blue-light); font-weight: 600; }
 .tree .file { color: var(--text-secondary); }
