@@ -39,7 +39,7 @@ function renderOverview() {
   $('page-overview').innerHTML = html`
     <div class="page-header">
       <div class="page-icon-wrap" style="background:rgba(30,95,173,0.12)">
-        <img src="../assets/icon.png" style="height:36px"/>
+        <img src="assets/icon.png" style="height:36px"/>
       </div>
       <div class="page-meta">
         <div class="page-num">PORTAL DE DOCUMENTACIÓN</div>
